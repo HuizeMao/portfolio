@@ -40,6 +40,13 @@ nav a.current {
   padding-bottom: 0.1em;
 }
 
+.current {
+  font-weight: bold;
+  text-decoration: underline;
+  color: orange;
+}
+
+
 form {
   display: grid;
   grid-template-columns: auto 1fr;
