@@ -51,3 +51,65 @@ for (let p of pages) {
 
   nav.append(a);
 }
+
+// Step 4: Add dark mode theme switcher
+document.body.insertAdjacentHTML(
+    'afterbegin',
+    `
+    <label class="color-scheme">
+      Theme:
+      <select>
+        <option value="light dark">Automatic</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </label>
+    `
+  );
+  
+  // Get reference to <select>
+  const select = document.querySelector('.color-scheme select');
+  
+  // Optional: centralize this logic
+  function setColorScheme(scheme) {
+    const html = document.documentElement;
+    html.classList.remove("dark-theme", "light-theme");
+  
+    if (scheme === "dark") html.classList.add("dark-theme");
+    else if (scheme === "light") html.classList.add("light-theme");
+  
+    html.style.setProperty("color-scheme", scheme);
+  }
+  
+  
+  // On load: check localStorage
+  if ("colorScheme" in localStorage) {
+    const saved = localStorage.colorScheme;
+    setColorScheme(saved);
+    select.value = saved;
+  }
+  
+  // Listen for user changes
+  select.addEventListener('input', (event) => {
+    const newScheme = event.target.value;
+    setColorScheme(newScheme);
+    localStorage.colorScheme = newScheme;
+    console.log('Color scheme changed to', newScheme);
+  });
+  
+// Enhance contact form
+const form = document.querySelector('form[action^="mailto:"]');
+
+form?.addEventListener("submit", function (event) {
+  event.preventDefault(); // Stop default submission
+
+  const data = new FormData(form);
+  const params = [];
+
+  for (let [name, value] of data) {
+    params.push(`${name}=${encodeURIComponent(value)}`);
+  }
+
+  const url = `${form.action}?${params.join("&")}`;
+  location.href = url; // Open in email client
+});
