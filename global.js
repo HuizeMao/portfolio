@@ -9,7 +9,7 @@
 // // Step 2.3: Add the class "current" to that link
 // currentLink?.classList.add("current");
 
-console.log("IT’S ALIVE!");
+console.log("IT'S ALIVE!");
 
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -113,3 +113,43 @@ form?.addEventListener("submit", function (event) {
   const url = `${form.action}?${params.join("&")}`;
   location.href = url; // Open in email client
 });
+
+export async function fetchJSON(url) {
+  try {
+    // Fetch the JSON file from the given URL
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch projects: ${response.statusText}`);
+    }
+    console.log(response);
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching or parsing JSON data:', error);
+  }
+}
+
+export function renderProjects(project, containerElement, headingLevel = 'h2') {
+  // Your code will go here
+  containerElement.innerHTML = '';
+  project.forEach(item => {
+    const article = document.createElement('article');
+    article.classList.add('project');
+    
+    const heading = document.createElement(headingLevel);
+    heading.textContent = item.title;
+    
+    article.appendChild(heading);
+    article.innerHTML += `
+      <img src="${item.image}" alt="${item.title}">
+      <p>${item.description}</p>
+    `;
+    
+    containerElement.appendChild(article);
+  });
+}
+
+export async function fetchGitHubData(username) {
+  return fetchJSON(`https://api.github.com/users/${username}`);
+}

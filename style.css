@@ -70,15 +70,103 @@ form button {
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  padding: 2em;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
 }
 
 .projects article {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg, canvas);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.projects article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.projects article img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--color-orange);
+}
+
+.projects article h3 {
+  padding: 1.2em 1.2em 0.8em;
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.projects article p {
+  padding: 0 1.2em 1.2em;
+  margin: 0;
+  flex-grow: 1;
+  line-height: 1.6;
+  color: var(--text, canvastext);
+  opacity: 0.9;
+}
+
+/* Projects page specific styles */
+body > .projects {
+  margin-top: 2em;
+}
+
+body > h1 {
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+body > p {
+  text-align: center;
+  margin-bottom: 2em;
+  color: var(--text, canvastext);
+  opacity: 0.8;
+}
+
+/* Home page specific styles */
+main .projects {
   display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
-  gap: 0.5em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  padding: 2em;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+main .projects h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 2.2em;
+  color: var(--color-accent);
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid var(--color-orange);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -183,4 +271,201 @@ nav, header, footer, main, section, article {
 h1, h2, h3, h4, h5, h6,
 p, a, label, input, textarea, button {
   color: inherit;
+}
+
+.github-stats {
+  margin: 2em auto;
+  max-width: 800px;
+  padding: 1em;
+}
+
+.github-stats-card {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  background: var(--bg, canvas);
+  border-radius: 12px;
+  padding: 2em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.github-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--color-orange);
+}
+
+.github-info {
+  flex: 1;
+}
+
+.github-info h3 {
+  margin: 0 0 0.5em;
+  color: var(--color-accent);
+  font-size: 1.8em;
+}
+
+.github-info p {
+  margin: 0 0 1em;
+  color: var(--text, canvastext);
+  opacity: 0.9;
+}
+
+.github-metrics {
+  display: flex;
+  gap: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.github-metrics span {
+  color: var(--text, canvastext);
+  opacity: 0.8;
+}
+
+.github-link {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  background: var(--color-orange);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.github-link:hover {
+  background: var(--color-accent);
+}
+
+@media (max-width: 600px) {
+  .github-stats-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5em;
+  }
+
+  .github-metrics {
+    justify-content: center;
+  }
+}
+
+/* Projects Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5em;
+  padding: 2em;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1.5em;
+  }
+}
+
+@media (max-width: 1100px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 1em;
+    gap: 2em;
+  }
+}
+
+/* Project Card Styles */
+.projects-grid article {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg, canvas);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.projects-grid article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.projects-grid article h3 {
+  padding: 1.2em 1.2em 0.8em;
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 1.5em;
+  font-weight: 600;
+  line-height: 1.2;
+  order: 1;
+}
+
+.projects-grid article img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--color-orange);
+  order: 2;
+}
+
+.projects-grid article p {
+  padding: 1.2em 1.2em 1.5em;
+  margin: 0;
+  flex-grow: 1;
+  line-height: 1.6;
+  color: var(--text, canvastext);
+  opacity: 0.9;
+  order: 3;
+}
+
+/* Projects Page Specific Styles */
+body > main {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+body > main h1 {
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: var(--color-accent);
+  font-size: 3em;
+}
+
+body > main .project-count {
+  text-align: center;
+  margin-bottom: 2em;
+  color: var(--text, canvastext);
+  opacity: 0.8;
+  font-size: 1.2em;
+}
+
+/* Home Page Projects Section */
+main .projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+  padding: 2em;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+
+
+
+/* Error Message */
+.error {
+  text-align: center;
+  color: var(--color-orange);
+  padding: 2em;
+  font-size: 1.2em;
 }

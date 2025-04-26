@@ -1,0 +1,86 @@
+[
+    {
+        "title": "Portfolio Website",
+        "year": "2024",
+        "image": "images/portfolio.png",
+        "description": "A personal portfolio website showcasing my projects and skills, built with HTML, CSS, and JavaScript. Features responsive design, dark mode, and dynamic project loading."
+    },
+    {
+        "title": "Data Visualization Dashboard",
+        "year": "2024",
+        "image": "images/dashboard.png",
+        "description": "An interactive dashboard for visualizing complex datasets using D3.js. Includes multiple chart types and real-time data updates."
+    },
+    {
+        "title": "Machine Learning Model for Text Classification",
+        "year": "2023",
+        "image": "images/ml.png",
+        "description": "Developed a natural language processing model using Python and TensorFlow to classify text documents with 95% accuracy."
+    },
+    {
+        "title": "Social Network Analysis",
+        "year": "2023",
+        "image": "images/sna.png",
+        "description": "Analyzed social network data using Python and NetworkX to identify key influencers and community structures."
+    },
+    {
+        "title": "Web Scraping Project",
+        "year": "2023",
+        "image": "images/scraper.png",
+        "description": "Built a web scraper using Python and BeautifulSoup to collect and analyze data from multiple sources."
+    },
+    {
+        "title": "Database Management System",
+        "year": "2022",
+        "image": "images/db.png",
+        "description": "Designed and implemented a relational database system with SQL, including complex queries and optimization."
+    },
+    {
+        "title": "Mobile App Development",
+        "year": "2022",
+        "image": "images/mobile.png",
+        "description": "Created a cross-platform mobile application using React Native, featuring offline capabilities and push notifications."
+    },
+    {
+        "title": "Data Analysis Project",
+        "year": "2022",
+        "image": "images/analysis.png",
+        "description": "Conducted comprehensive data analysis using Python and pandas, producing actionable insights for business decisions."
+    },
+    {
+        "title": "Algorithm Visualization Tool",
+        "year": "2021",
+        "image": "images/algo.png",
+        "description": "Developed an interactive tool to visualize sorting and searching algorithms using JavaScript and HTML5 Canvas."
+    },
+    {
+        "title": "Computer Vision Project",
+        "year": "2021",
+        "image": "images/cv.png",
+        "description": "Implemented object detection and recognition using OpenCV and Python, achieving real-time processing."
+    },
+    {
+        "title": "Web Development Project",
+        "year": "2021",
+        "image": "images/web.png",
+        "description": "Built a full-stack web application using Node.js, Express, and MongoDB, featuring user authentication and real-time updates."
+    },
+    {
+        "title": "Statistical Analysis Tool",
+        "year": "2020",
+        "image": "images/stats.png",
+        "description": "Created a statistical analysis tool using R, implementing various statistical tests and visualization methods."
+    },
+    {
+        "title": "Game Development Project",
+        "year": "2020",
+        "image": "images/game.png",
+        "description": "Developed a 2D game using Unity and C#, featuring custom physics and AI behaviors."
+    },
+    {
+        "title": "Network Security Tool",
+        "year": "2020",
+        "image": "images/security.png",
+        "description": "Built a network security monitoring tool using Python, implementing packet analysis and threat detection."
+    }
+]
