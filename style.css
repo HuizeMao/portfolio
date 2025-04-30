@@ -469,3 +469,63 @@ main .projects {
   padding: 2em;
   font-size: 1.2em;
 }
+
+a.button {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+}
+
+a.button:hover {
+  background-color: oklch(60% 0.25 250); /* slightly darker */
+}
+
+.pie-layout {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-block: 2rem;
+  flex-wrap: wrap; /* makes it responsive for smaller screens */
+}
+
+svg#projects-pie-plot {
+  flex: 0 0 auto;
+  max-width: 20em;
+  height: auto;
+}
+
+/* Legend styles */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  list-style: none;
+  padding: 1em;
+  margin: 0;
+  flex: 1;
+  border: 1px solid var(--color-accent, gray);
+  border-radius: 0.5rem;
+  background-color: var(--bg, canvas);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9rem;
+  color: var(--text, canvastext);
+}
+
+.legend-item .swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 0.25em;
+}

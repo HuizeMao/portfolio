@@ -131,24 +131,42 @@ export async function fetchJSON(url) {
 }
 
 export function renderProjects(project, containerElement, headingLevel = 'h2') {
-  // Your code will go here
   containerElement.innerHTML = '';
+  
   project.forEach(item => {
     const article = document.createElement('article');
     article.classList.add('project');
     
     const heading = document.createElement(headingLevel);
     heading.textContent = item.title;
-    
     article.appendChild(heading);
+
+    // Add image and description
     article.innerHTML += `
       <img src="${item.image}" alt="${item.title}">
       <p>${item.description}</p>
     `;
-    
+
+    // Add PDF button if available
+    if (item.pdf) {
+      const link = document.createElement('a');
+      link.href = item.pdf;
+      link.target = '_blank';
+      link.textContent = 'View Work Sample (PDF)';
+      link.classList.add('button'); // optional: style it like a button
+      article.appendChild(link);
+    }
+    // Add year if available
+    if (item.year) {
+      const yearSpan = document.createElement('span');
+      yearSpan.textContent = item.year;
+      yearSpan.classList.add('project-year');
+      article.appendChild(yearSpan);
+    }
     containerElement.appendChild(article);
   });
 }
+
 
 export async function fetchGitHubData(username) {
   return fetchJSON(`https://api.github.com/users/${username}`);

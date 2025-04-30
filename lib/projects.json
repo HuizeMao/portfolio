@@ -6,10 +6,11 @@
         "description": "A personal portfolio website showcasing my projects and skills, built with HTML, CSS, and JavaScript. Features responsive design, dark mode, and dynamic project loading."
     },
     {
-        "title": "Data Visualization Dashboard",
+        "title": "Chess Blunder Prediction",
         "year": "2024",
         "image": "images/dashboard.png",
-        "description": "An interactive dashboard for visualizing complex datasets using D3.js. Includes multiple chart types and real-time data updates."
+        "description": "I collaborated with Raymond on the 'Chess Blunder Prediction' project, where we developed time-series machine learning models to proactively identify potential blunders for players rated between 1300-1500. Our approach transformed raw game data into advanced features—including board representations, one-hot encoded game types, and game-conditioned time-series insights—with convolutional layers extracting key spatial and temporal patterns. To address the significant class imbalance (99% no blunder vs. 1% blunder), we employed techniques such as down-sampling, upsampling, and careful adjustments of loss functions and hyperparameters. These efforts improved the baseline model’s performance by 0.05 in F1 score. As passionate chess players, Raymond and I integrated our technical expertise with our deep interest in chess. Notably, my chess.com rating increased by 100 (11%) during the project.",
+        "pdf": "../documents/chess_blunder.pdf"
     },
     {
         "title": "Machine Learning Model for Text Classification",

@@ -7,15 +7,38 @@
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
   <main>
     <h1>Projects</h1>
     <p class="project-count">Welcome to my projects page. Here are <span id="project-count"></span> of my recent works.</p>
-    
-    <div class="projects-grid">
-      <script src="../global.js" type="module"></script>
-      <script src="project.js" type="module"></script>
+
+
+    <div class="pie-layout">
+      <svg id="projects-pie-plot" viewBox="-50 -50 100 100">
+        <!-- Pie chart paths go here -->
+      </svg>
+
+      <ul class="legend">
+        <!-- Legend items injected by D3 -->
+      </ul>
     </div>
+
+    <input
+        class="searchBar"
+        type="search"
+        aria-label="Search projects"
+        placeholder="Search projects…"
+      />
+    
+
+    <div class="projects-grid"> </div>
+    <script src="../global.js" type="module"></script>
+    <script src="project.js" type="module"></script>
   </main>
+
+  
+  
+  
   <script>
     // Wait for projects to load then update count
     document.addEventListener('DOMContentLoaded', async () => {
