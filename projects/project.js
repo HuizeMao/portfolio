@@ -107,6 +107,10 @@ function createProjectCard(project) {
   description.className = 'description-collapsed';
   descriptionContainer.appendChild(description);
 
+  // Button container
+  const buttonContainer = document.createElement('div');
+  buttonContainer.className = 'button-container';
+
   // Expand button
   const expandButton = document.createElement('button');
   expandButton.className = 'expand-button';
@@ -115,8 +119,20 @@ function createProjectCard(project) {
     description.classList.toggle('description-collapsed');
     this.textContent = description.classList.contains('description-collapsed') ? 'Read More' : 'Show Less';
   };
-  descriptionContainer.appendChild(expandButton);
+  buttonContainer.appendChild(expandButton);
 
+  // Work sample button for PDFs
+  if (project.pdf) {
+    const workSampleBtn = document.createElement('a');
+    workSampleBtn.href = project.pdf;
+    workSampleBtn.className = 'work-sample-button';
+    workSampleBtn.textContent = 'Work Sample';
+    workSampleBtn.target = '_blank';
+    workSampleBtn.rel = 'noopener noreferrer';
+    buttonContainer.appendChild(workSampleBtn);
+  }
+
+  descriptionContainer.appendChild(buttonContainer);
   article.appendChild(descriptionContainer);
 
   return article;
