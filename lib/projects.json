@@ -1,58 +1,60 @@
 [
     {
         "title": "Portfolio Website",
-        "year": "2024",
+        "year": "2025",
         "image": "images/portfolio.png",
-        "description": "A personal portfolio website showcasing my projects and skills, built with HTML, CSS, and JavaScript. Features responsive design, dark mode, and dynamic project loading."
+        "description": "A personal portfolio website showcasing my projects and skills, built with HTML, CSS, JavaScript, and D3.js."
     },
     {
         "title": "Chess Blunder Prediction",
-        "year": "2024",
+        "year": "2025",
         "image": "images/dashboard.png",
-        "description": "I collaborated with Raymond on the 'Chess Blunder Prediction' project, where we developed time-series machine learning models to proactively identify potential blunders for players rated between 1300-1500. Our approach transformed raw game data into advanced features—including board representations, one-hot encoded game types, and game-conditioned time-series insights—with convolutional layers extracting key spatial and temporal patterns. To address the significant class imbalance (99% no blunder vs. 1% blunder), we employed techniques such as down-sampling, upsampling, and careful adjustments of loss functions and hyperparameters. These efforts improved the baseline model’s performance by 0.05 in F1 score. As passionate chess players, Raymond and I integrated our technical expertise with our deep interest in chess. Notably, my chess.com rating increased by 100 (11%) during the project.",
+        "description": "In the 'Chess Blunder Prediction' project, I collaborated with Raymond to build time-series machine learning models that identify potential blunders for players rated 1300–1500. We engineered advanced features from raw game data—including board states, one-hot encoded game types, and contextual time-series patterns—leveraging convolutional layers to capture spatial and temporal dynamics. To tackle the severe class imbalance (1% blunder rate), we applied resampling techniques and optimized loss functions and hyperparameters, boosting the baseline F1 score by 0.05. Combining our technical skills with a shared passion for chess, the project also coincided with a personal rating gain of 100 points (11%) on chess.com.",
         "pdf": "../documents/chess_blunder.pdf"
     },
     {
-        "title": "Machine Learning Model for Text Classification",
-        "year": "2023",
+        "title": "Water Flow Rate Prediction, Statistical Inference, and Analytics",
+        "year": "2024",
         "image": "images/ml.png",
-        "description": "Developed a natural language processing model using Python and TensorFlow to classify text documents with 95% accuracy."
+        "description": "This project analyzed the Madonna di Canneto spring's flow rate in Italy using R, integrating non-parametric statistics, time-series analysis, and machine learning to support sustainable water management. After conducting exploratory data analysis on rainfall, temperature, and flow rate, Sophia and I addressed missing data through season-specific imputation and applied Kruskal-Wallis and Wilcoxon tests to capture seasonal and yearly variability. We used linear regression to assess key relationships, then developed an XGBoost model with lagged features and seasonal encoding, achieving an R² of 0.974 and RMSE of 2.737. The approach highlights how statistical inference and machine learning can work together to reveal patterns in hydrological systems.",
+        "pdf": "../documents/water_analytics.pdf"
     },
     {
-        "title": "Social Network Analysis",
-        "year": "2023",
+        "title": "AI-Powered Donor Appreciation for Meals on Wheels",
+        "year": "2024",
         "image": "images/sna.png",
-        "description": "Analyzed social network data using Python and NetworkX to identify key influencers and community structures."
+        "description": "In this project with Meals on Wheels (MoW), I used prompt engineering to generate personalized thank-you letters for donors supporting food-insecure seniors in San Diego. Leveraging the OpenAI API and SerpAPI, I trained a Large Language Model (LLM) to incorporate search capabilities, chain-of-thought reasoning, and few-shot learning to create meaningful, context-aware messages."
     },
     {
-        "title": "Web Scraping Project",
-        "year": "2023",
+        "title": "Cryptocurrency Price Prediction",
+        "year": "2024",
         "image": "images/scraper.png",
-        "description": "Built a web scraper using Python and BeautifulSoup to collect and analyze data from multiple sources."
+        "description": "Driven by an interest in crypto, finance, and machine learning, Shivangi and I undertook a Cryptocurrency Price Prediction project focused on forecasting the price movements of Bitcoin, Ethereum, and Dogecoin. Using Python, we applied regression techniques—emphasizing data cleaning, feature engineering, and model evaluation—to uncover each coin’s unique behavior. Linear regression performed best for Bitcoin and Dogecoin, while SVM yielded superior results for Ethereum. We evaluated our models using R², MSE, and RMSE to ensure robust and accurate predictions.",
+        "pdf": "../documents/crypto_prediction.pdf"
     },
     {
-        "title": "Database Management System",
-        "year": "2022",
+        "title": "Dashboard Development for Oncology and Kids",
+        "year": "2024",
         "image": "images/db.png",
-        "description": "Designed and implemented a relational database system with SQL, including complex queries and optimization."
+        "description": "I co-led a project with Oncology and Kids (OAK), a nonprofit supporting children with cancer through community camps, to help them better understand and target their donors. I worked on exploratory data analysis and built the dashboard, assessed missing values, and applied time series analysis to uncover trends. I also set up our team's collaboration tools, including a website, shared drive, and weekly progress reports. At the end of the project, we presented our findings, models, and visualizations to a UCSD lecturer and OAK's leadership."
     },
     {
-        "title": "Mobile App Development",
-        "year": "2022",
+        "title": "Leagues of Legend Win Rate Analysis",
+        "year": "2024",
         "image": "images/mobile.png",
-        "description": "Created a cross-platform mobile application using React Native, featuring offline capabilities and push notifications."
+        "description": "Driven by our passion for gaming and data science, Raymond and I explored key factors that influence the outcome of League of Legends matches. We analyzed features like hero kills, Creep Score (CS), and economy from both full-game and early-game perspectives. Using Python and Pandas, we handled data cleaning, EDA, missing value analysis, permutation testing, and machine learning modeling, covering much of the data science pipeline. Our findings offer valuable insights for League fans interested in understanding win rates through in-game statistics."
     },
     {
-        "title": "Data Analysis Project",
-        "year": "2022",
-        "image": "images/analysis.png",
-        "description": "Conducted comprehensive data analysis using Python and pandas, producing actionable insights for business decisions."
-    },
-    {
-        "title": "Algorithm Visualization Tool",
+        "title": "Object Segmentation on Satellite Images, European Space Agency Mission Space Lab",
         "year": "2021",
+        "image": "images/analysis.png",
+        "description": "Our team built two object segmentation algorithms to separate land, ocean, and cloud from satellite images, covering every stage of a data science project. We collected data using code that ran on the International Space Station via a Raspberry Pi provided by the European Space Agency, using Python and the picamera library. I led data collection and developed encoder-decoder models for semantic segmentation using Keras. As a team, we handled data preprocessing—including labeling, image padding, and augmentation with NumPy and OpenCV—and trained fully convolutional networks to extract and restore spatial information. Collaboration was key, as each step depended on timely integration of each other's work."
+    },
+    {
+        "title": "The Usage of Convolutional Neural Networks to Prognosticate the Probability of Atopic Hand Dermatitis",
+        "year": "2019",
         "image": "images/algo.png",
-        "description": "Developed an interactive tool to visualize sorting and searching algorithms using JavaScript and HTML5 Canvas."
+        "description": "Created a binary classification machine learning algorithm that identifies whether an image of a hand contains Eczema or not. The project included most of the data science pipeline, from scraping data online, data cleaning, and augmentation to model building and cross-validation. Through this project, our team (Pedro, Raul, and I) introduced ourselves to Machine Learning and taught ourselves the data science model building pipeline and models like Resnet, Inception network and an idea about the math behind the models."
     },
     {
         "title": "Computer Vision Project",

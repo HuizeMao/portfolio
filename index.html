@@ -14,23 +14,16 @@
 <body>
     <script type="module" src="global.js"></script>
     <div class="github-stats">
-        <h2 style="text-align: center;">GitHub Stats</h2>
-      
-        <!-- This is where we will inject GitHub data -->
+        <h2>GitHub Stats</h2>
         <div id="profile-stats"></div>
-      </div>
-      
-      <!-- Load the script AFTER the elements it will modify -->
-      <script type="module" src="index.js"></script>
-      
-    <div class="projects" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2em; padding: 2em; max-width: 1400px; margin: 0 auto;">
-        <h2 style="text-align: center; grid-column: 1 / -1; margin-bottom: 1em; font-size: 2.2em; color: var(--color-accent); padding-bottom: 0.5em; border-bottom: 2px solid var(--color-orange);">Latest Projects</h2>
-        <svg id="projects-pie-plot" style="max-width: 20em; margin-block: 2em; overflow: visible;"></svg>
-        <div id="projects-container"></div>
-        <script type="module" src="index.js"></script>
     </div>
-
-
+      
+    <script type="module" src="index.js"></script>
+      
+    <div class="projects">
+        <h2>Latest Projects</h2>
+        <div id="projects-container"></div>
+    </div>
 </body>
 </html>
 

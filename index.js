@@ -1,4 +1,4 @@
-import { fetchJSON, renderProjects, fetchGitHubData } from './global.js';
+import { fetchJSON, fetchGitHubData } from './global.js';
 
 async function loadGitHubStats() {
     try {
@@ -32,19 +32,69 @@ async function loadGitHubStats() {
     }
 }
 
-async function loadProjects() {
+async function renderProjects() {
     try {
-        const projects = await fetchJSON('./lib/projects.json');
-        const latestProjects = projects.slice(0, 3);
-        const projectsContainer = document.getElementById('projects-container');
-        if (projectsContainer) {
-            renderProjects(latestProjects, projectsContainer, 'h3');
+        const projects = await fetchJSON('../lib/projects.json');
+        const container = document.getElementById('projects-container');
+        
+        if (!container) {
+            console.error('Projects container not found');
+            return;
         }
+
+        // Sort projects by year (newest first) and take the first 3
+        const latestProjects = projects
+            .sort((a, b) => b.year - a.year)
+            .slice(0, 3);
+
+        latestProjects.forEach(project => {
+            const article = document.createElement('article');
+            
+            // Title
+            const title = document.createElement('h3');
+            title.textContent = project.title;
+            article.appendChild(title);
+
+            // Image container
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'image-container';
+            const img = document.createElement('img');
+            img.src = project.image;
+            img.alt = project.title;
+            img.onerror = function() {
+                this.style.display = 'none';
+                this.parentElement.style.height = '0';
+            };
+            imageContainer.appendChild(img);
+            article.appendChild(imageContainer);
+
+            // Description container
+            const descriptionContainer = document.createElement('div');
+            descriptionContainer.className = 'description-container';
+            
+            const description = document.createElement('p');
+            description.textContent = project.description;
+            description.className = 'description-collapsed';
+            descriptionContainer.appendChild(description);
+
+            // Expand button
+            const expandButton = document.createElement('button');
+            expandButton.className = 'expand-button';
+            expandButton.textContent = 'Read More';
+            expandButton.onclick = function() {
+                description.classList.toggle('description-collapsed');
+                this.textContent = description.classList.contains('description-collapsed') ? 'Read More' : 'Show Less';
+            };
+            descriptionContainer.appendChild(expandButton);
+
+            article.appendChild(descriptionContainer);
+            container.appendChild(article);
+        });
     } catch (error) {
         console.error('Error loading projects:', error);
-        const projectsContainer = document.getElementById('projects-container');
-        if (projectsContainer) {
-            projectsContainer.innerHTML = '<p>Unable to load projects at this time.</p>';
+        const container = document.getElementById('projects-container');
+        if (container) {
+            container.innerHTML = '<p>Unable to load projects at this time.</p>';
         }
     }
 }
@@ -52,7 +102,7 @@ async function loadProjects() {
 // Load both GitHub stats and projects when the DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     loadGitHubStats();
-    loadProjects();
+    renderProjects();
 });
 
 const githubData = await fetchGitHubData('HuizeMao');
