@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Repository Commit Stats</title>
+  <meta name="description" content="This includes stats about the code of this website" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    dl.info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.5rem 1rem;
+      font-size: 0.9rem;
+      margin: 0;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      backdrop-filter: blur(4px);
+      position: fixed;
+      pointer-events: none;
+      top: 1em;
+      left: 1em;
+      z-index: 10;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+
+    dl.info[hidden] {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    circle {
+      transition: 200ms;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    circle:hover {
+      transform: scale(1.5);
+    }
+
+    circle.selected {
+      fill: #ff6b6b;
+    }
+
+    .gridlines line {
+      stroke: #ccc;
+      stroke-opacity: 0.3;
+    }
+
+    .selection {
+      fill-opacity: 0.1;
+      stroke: black;
+      stroke-opacity: 0.7;
+      stroke-dasharray: 5 3;
+      animation: marching-ants 2s linear infinite;
+    }
+
+    @keyframes marching-ants {
+      to {
+        stroke-dashoffset: -8;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Load shared logic -->
+  <script type="module" src="../global.js"></script>
+
+  <!-- Summary Section -->
+  <div class="github-stats">
+    <h2 style="text-align: center;">Portfolio Repository Commit Stats</h2>
+    <div id="stats" style="text-align: center;"></div>
+  </div>
+
+  <!-- Scatterplot Section -->
+  <h2 style="text-align: center;">Commits by time of day</h2>
+  <div id="chart"></div>
+
+  <!-- Tooltip -->
+  <dl id="commit-tooltip" class="info tooltip" hidden>
+    <dt>Commit</dt>
+    <dd><a href="" id="commit-link" target="_blank"></a></dd>
+    <dt>Date</dt>
+    <dd id="commit-date"></dd>
+  </dl>
+
+  <!-- Brushing feedback -->
+  <p id="selection-count" style="text-align: center;">No commits selected</p>
+  <dl id="language-breakdown" class="stats" style="text-align: center;"></dl>
+
+  <!-- Main logic -->
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

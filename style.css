@@ -761,3 +761,78 @@ svg#projects-pie-plot {
   opacity: 1;
   color: var(--color-orange);
 }
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  gap: 2rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-family: system-ui, sans-serif;
+}
+
+.stats dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  text-align: center;
+}
+
+.stats dd {
+  font-size: 1.75rem;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  color: #111;
+}
+
+.gridlines line {
+  stroke: #ccc;
+  stroke-opacity: 0.3;
+}
+
+.gridlines path {
+  display: none;
+}
+
+.dots circle {
+  transition: fill 0.2s;
+}
+
+dl.info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(4px);
+  position: fixed;
+  pointer-events: none;
+  top: 1em;
+  left: 1em;
+  z-index: 10;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+dl.info[hidden] {
+  opacity: 0;
+  visibility: hidden;
+}
+
+circle {
+  transition: 200ms;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+circle:hover {
+  transform: scale(1.5);
+}

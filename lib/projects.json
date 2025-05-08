@@ -1,5 +1,12 @@
 [
     {
+        "title": "Processed Food Analysis",
+        "year": "2025",
+        "image": "images/portfolio.png",
+        "description": "Many people think ultra-processed foods only include snacks or candy, but I wanted to challenge that idea. Using data from GroceryDB, published in Nature Food (2022), I compared Food Processing Scores (FPro) across categories sold at Target, Walmart, and Whole Foods. I focused on whether everyday items like cereal, bread, or breakfast foods were also highly processed. I used a boxplot to show the top 10 most processed and bottom 10 least processed food categories based on median FPro. The clean visual contrast—using blues for minimally processed foods and reds for highly processed ones—helped highlight key patterns. Bread, cereal, and breakfast foods stood out, ranking higher than many might expect. Small design tweaks, like clearer labels and focused annotations, helped guide the viewer to these insights.",
+        "pdf": "../documents/grocery_visualization.pdf"
+    },
+    {
         "title": "Portfolio Website",
         "year": "2025",
         "image": "images/portfolio.png",
@@ -79,11 +86,5 @@
         "year": "2020",
         "image": "images/game.png",
         "description": "Developed a 2D game using Unity and C#, featuring custom physics and AI behaviors."
-    },
-    {
-        "title": "Network Security Tool",
-        "year": "2020",
-        "image": "images/security.png",
-        "description": "Built a network security monitoring tool using Python, implementing packet analysis and threat detection."
     }
 ]
