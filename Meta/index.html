@@ -2,96 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio Repository Commit Stats</title>
-  <meta name="description" content="This includes stats about the code of this website" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style.css"/>
   <style>
-    dl.info {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0.5rem 1rem;
-      font-size: 0.9rem;
-      margin: 0;
-      padding: 0.75rem 1rem;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 0.5rem;
-      backdrop-filter: blur(4px);
+    body {
+      max-width: min(120ch, 80vw);
+      margin: 0 auto;
+      font-family: sans-serif;
+    }
+    section { margin-bottom: 2rem; }
+    #scrollytelling { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    #scroll-container, #file-scroll-container {
+      position: relative;
+      height: 300px;
+      overflow-y: scroll;
+      border: 1px solid #ccc;
+    }
+    #spacer, #file-spacer { width: 1px; }
+    .item {
+      position: absolute;
+      width: 95%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+      background: rgba(255,255,255,0.8);
+    }
+    #chart svg { width: 100%; height: auto; }
+    dl.files, dl.stats { margin: 0; }
+    dl.files dt, dl.stats dt { font-weight: bold; }
+    dl.files dd, dl.stats dd { margin: 0 0 0.5rem 1rem; }
+    #file-section { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    #commit-tooltip {
       position: fixed;
+      background: white;
+      border: 1px solid #666;
+      padding: 0.5rem;
       pointer-events: none;
-      top: 1em;
-      left: 1em;
-      z-index: 10;
-      transition: opacity 0.5s, visibility 0.5s;
-    }
-
-    dl.info[hidden] {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    circle {
-      transition: 200ms;
-      transform-origin: center;
-      transform-box: fill-box;
-    }
-
-    circle:hover {
-      transform: scale(1.5);
-    }
-
-    circle.selected {
-      fill: #ff6b6b;
-    }
-
-    .gridlines line {
-      stroke: #ccc;
-      stroke-opacity: 0.3;
-    }
-
-    .selection {
-      fill-opacity: 0.1;
-      stroke: black;
-      stroke-opacity: 0.7;
-      stroke-dasharray: 5 3;
-      animation: marching-ants 2s linear infinite;
-    }
-
-    @keyframes marching-ants {
-      to {
-        stroke-dashoffset: -8;
-      }
     }
   </style>
 </head>
 <body>
-  <!-- Load shared logic -->
   <script type="module" src="../global.js"></script>
 
-  <!-- Summary Section -->
-  <div class="github-stats">
-    <h2 style="text-align: center;">Portfolio Repository Commit Stats</h2>
-    <div id="stats" style="text-align: center;"></div>
-  </div>
+  <section class="github-stats">
+    <h2>Portfolio Repository Commit Stats</h2>
+    <div id="stats"></div>
+  </section>
 
-  <!-- Scatterplot Section -->
-  <h2 style="text-align: center;">Commits by time of day</h2>
-  <div id="chart"></div>
+  <section>
+    <h2>Commits by time of day</h2>
+    <div id="filter-container">
+      <label>
+        Show commits until:
+        <input type="range" id="filter-slider" min="0" max="100"/>
+      </label>
+      <time id="filter-time"></time>
+    </div>
+    <div id="scrollytelling">
+      <div id="scroll-container">
+        <div id="spacer"></div>
+        <div id="items-container"></div>
+      </div>
+      <div id="chart"></div>
+    </div>
+  </section>
 
-  <!-- Tooltip -->
-  <dl id="commit-tooltip" class="info tooltip" hidden>
-    <dt>Commit</dt>
-    <dd><a href="" id="commit-link" target="_blank"></a></dd>
-    <dt>Date</dt>
-    <dd id="commit-date"></dd>
+  <section id="file-section">
+    <div>
+      <h2>Lines per File</h2>
+      <dl class="files"></dl>
+    </div>
+    <div>
+      <h2>Scrollytelling: File-sizes by Commit</h2>
+      <div id="file-scroll-container">
+        <div id="file-spacer"></div>
+        <div id="file-items-container"></div>
+      </div>
+    </div>
+  </section>
+
+  <dl id="commit-tooltip" hidden>
+    <dt>Commit:</dt>
+    <dd><a id="commit-link" href="#" target="_blank"></a></dd>
+    <dt>Date:</dt>
+    <dd><time id="commit-date"></time></dd>
   </dl>
 
-  <!-- Brushing feedback -->
-  <p id="selection-count" style="text-align: center;">No commits selected</p>
-  <dl id="language-breakdown" class="stats" style="text-align: center;"></dl>
-
-  <!-- Main logic -->
   <script type="module" src="./main.js"></script>
 </body>
 </html>

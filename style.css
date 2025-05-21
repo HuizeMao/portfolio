@@ -826,13 +826,206 @@ dl.info[hidden] {
   opacity: 0;
   visibility: hidden;
 }
-
+/* 
 circle {
   transition: 200ms;
   transform-origin: center;
   transform-box: fill-box;
-}
+} */
+circle {
+      transition: 200ms;
+      transform-origin: center;
+      transform-box: fill-box;
+      transition: all 200ms, r calc(var(--r) * 100ms);
+      @starting-style {
+        r: 0;
+      }
+    }
 
 circle:hover {
   transform: scale(1.5);
+}
+
+/* src/style.css */
+/* ——— Step 2: file-list styling with subgrid ——— */
+#file-list {
+  margin-top: 1rem;
+}
+
+.files {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid; /* inherits the two-column grid */
+  align-items: center;
+}
+
+.files dt {
+  grid-column: 1;
+  font-weight: bold;
+}
+
+.files dd {
+  grid-column: 2;
+  margin: 0;
+}
+/* ————————————————————————————— */
+
+/* Info tooltip */
+    dl.info {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.5rem 1rem;
+      font-size: 0.9rem;
+      margin: 0;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      backdrop-filter: blur(4px);
+      position: fixed;
+      pointer-events: none;
+      top: 1em;
+      left: 1em;
+      z-index: 10;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+    dl.info[hidden] {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Circles & grid */
+    circle {
+      transition: all 200ms, r calc(var(--r) * 100ms);
+      @starting-style {
+        r: 0;
+      }
+    }
+    circle:hover {
+      transform: scale(1.5);
+    }
+    circle.selected {
+      fill: #ff6b6b;
+    }
+    .gridlines line {
+      stroke: #ccc;
+      stroke-opacity: 0.3;
+    }
+    .selection {
+      fill-opacity: 0.1;
+      stroke: black;
+      stroke-opacity: 0.7;
+      stroke-dasharray: 5 3;
+      animation: marching-ants 2s linear infinite;
+    }
+    @keyframes marching-ants {
+      to {
+        stroke-dashoffset: -8;
+      }
+    }
+
+    /* Filter UI */
+    #filter-container {
+      display: flex;
+      align-items: baseline;
+      margin: 1rem;
+    }
+    #filter-container label {
+      flex: 1;
+    }
+    #filter-time {
+      margin-left: auto;
+      font-weight: bold;
+    }
+
+.files {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5em 1em;
+}
+
+.files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+.files dt {
+  grid-column: 1;
+}
+
+.files dd {
+  grid-column: 2;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+}
+
+.line {
+  width: 0.5em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  /* background-color is set inline */
+}
+
+.files small {
+  display: block;
+  opacity: 0.6;
+  font-size: 0.8em;
+}
+
+#scrollytelling {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+/* feel free to play with this to make your scrolly more seemless with your plot */
+#scroll-container {
+  grid-column: 1;
+  position: relative;
+  width: 95%;
+  height: 350px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+
+#chart {
+  grid-column: 2;
+}
+
+#spacer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: none; /* transparent */
+  pointer-events: none;
+}
+
+#items-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.item {
+  height: 30px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #eee;
 }
