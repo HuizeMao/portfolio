@@ -130,6 +130,15 @@ function createProjectCard(project) {
     workSampleBtn.target = '_blank';
     workSampleBtn.rel = 'noopener noreferrer';
     buttonContainer.appendChild(workSampleBtn);
+  } else if(project.link) {
+    // Work sample button for links
+    const workSampleBtn = document.createElement('a');
+    workSampleBtn.href = project.link;
+    workSampleBtn.className = 'work-sample-button';
+    workSampleBtn.textContent = 'Work Sample';
+    workSampleBtn.target = '_blank';
+    workSampleBtn.rel = 'noopener noreferrer';
+    buttonContainer.appendChild(workSampleBtn);
   }
 
   descriptionContainer.appendChild(buttonContainer);

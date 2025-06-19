@@ -23,8 +23,8 @@ let pages = [
   { url: '', title: 'Home' },
   { url: 'projects/', title: 'Projects' },
   { url: 'resume/', title: 'Resume' },
-  { url: 'contact/', title: 'Contact' },
-  { url: 'Meta/', title: 'Meta' },
+  // { url: 'contact/', title: 'Contact' },
+  // { url: 'Meta/', title: 'Meta' },
   { url: 'https://github.com/HuizeMao', title: 'GitHub' }
 ];
 

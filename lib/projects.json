@@ -1,5 +1,18 @@
 [
     {
+        "title": "Scalable Amazon Review Analysis with Dask and Spark",
+        "year": "2025",
+        "image": "images/stats.png",
+        "description": "Worked on two projects analyzing Amazon product reviews and pricing at scale, around 60 GB of data. Used Dask in the first project to clean and process large review datasets across multiple cores. Navigated through the manager-worker node mechanism in Dask and modified the workflow accordingly. Tasks included filtering verified reviews, computing helpfulness ratios, and detecting dangling references between product and metadata tables. In the second project, used PySpark to run distributed queries on Amazon metadata and pricing. Applied joins, aggregations, and filters to detect inconsistent pricing entries and identify products with missing or mismatched data. Used RDD and DataFrames to write queries that scale, and built random forest model. Took advantage of Spark’s memory caching and Catalyst query optimizer to improve performance."
+    },
+    {
+        "title": "Interactive Visualization of Fitness Running Data",
+        "year": "2025",
+        "image": "images/stats.png",
+        "description": "Built with D3.js, this scrollytelling project visualizes physiological responses to treadmill exercise, emphasizing the aerobic (VT1) and anaerobic (VT2) ventilation thresholds. Through animated transitions, interactive design, and demographic filtering, the site guides users to explore how fitness training, more than factors like age or BMI, drives performance. Key features include dynamic charts, brushing and tooltips, and personalized visual narratives. This project showcases advanced use of JavaScript, D3, HTML, CSS, and visual storytelling to deliver insights on individualized training and the science of ventilatory thresholds.",
+        "link" : "https://mfjacobsen.github.io/gxt-physiology/"
+    },
+    {
         "title": "Processed Food Analysis",
         "year": "2025",
         "image": "images/portfolio.png",
@@ -10,7 +23,8 @@
         "title": "Portfolio Website",
         "year": "2025",
         "image": "images/portfolio.png",
-        "description": "A personal portfolio website showcasing my projects and skills, built with HTML, CSS, JavaScript, and D3.js."
+        "description": "A personal portfolio website showcasing my projects and skills, built with HTML, CSS, JavaScript, and D3.js.",
+        "link": "https://huizemao.github.io/portfolio/"
     },
     {
         "title": "Chess Blunder Prediction",
@@ -49,42 +63,21 @@
         "title": "Leagues of Legend Win Rate Analysis",
         "year": "2024",
         "image": "images/mobile.png",
-        "description": "Driven by our passion for gaming and data science, Raymond and I explored key factors that influence the outcome of League of Legends matches. We analyzed features like hero kills, Creep Score (CS), and economy from both full-game and early-game perspectives. Using Python and Pandas, we handled data cleaning, EDA, missing value analysis, permutation testing, and machine learning modeling, covering much of the data science pipeline. Our findings offer valuable insights for League fans interested in understanding win rates through in-game statistics."
+        "description": "Driven by our passion for gaming and data science, Raymond and I explored key factors that influence the outcome of League of Legends matches. We analyzed features like hero kills, Creep Score (CS), and economy from both full-game and early-game perspectives. Using Python and Pandas, we handled data cleaning, EDA, missing value analysis, permutation testing, and machine learning modeling, covering much of the data science pipeline. Our findings offer valuable insights for League fans interested in understanding win rates through in-game statistics.",
+        "link" : "https://huizemao.github.io/Leagues-of-Legend-Win-Rate-Analysis/"
     },
     {
         "title": "Object Segmentation on Satellite Images, European Space Agency Mission Space Lab",
         "year": "2021",
         "image": "images/analysis.png",
-        "description": "Our team built two object segmentation algorithms to separate land, ocean, and cloud from satellite images, covering every stage of a data science project. We collected data using code that ran on the International Space Station via a Raspberry Pi provided by the European Space Agency, using Python and the picamera library. I led data collection and developed encoder-decoder models for semantic segmentation using Keras. As a team, we handled data preprocessing—including labeling, image padding, and augmentation with NumPy and OpenCV—and trained fully convolutional networks to extract and restore spatial information. Collaboration was key, as each step depended on timely integration of each other's work."
+        "description": "Our team built two object segmentation algorithms to separate land, ocean, and cloud from satellite images, covering every stage of a data science project. We collected data using code that ran on the International Space Station via a Raspberry Pi provided by the European Space Agency, using Python and the picamera library. I led data collection and developed encoder-decoder models for semantic segmentation using Keras. As a team, we handled data preprocessing—including labeling, image padding, and augmentation with NumPy and OpenCV—and trained fully convolutional networks to extract and restore spatial information. Collaboration was key, as each step depended on timely integration of each other's work.",
+        "link": "https://github.com/HuizeMao/plastrosentries"
     },
     {
         "title": "The Usage of Convolutional Neural Networks to Prognosticate the Probability of Atopic Hand Dermatitis",
         "year": "2019",
         "image": "images/algo.png",
-        "description": "Created a binary classification machine learning algorithm that identifies whether an image of a hand contains Eczema or not. The project included most of the data science pipeline, from scraping data online, data cleaning, and augmentation to model building and cross-validation. Through this project, our team (Pedro, Raul, and I) introduced ourselves to Machine Learning and taught ourselves the data science model building pipeline and models like Resnet, Inception network and an idea about the math behind the models."
-    },
-    {
-        "title": "Computer Vision Project",
-        "year": "2021",
-        "image": "images/cv.png",
-        "description": "Implemented object detection and recognition using OpenCV and Python, achieving real-time processing."
-    },
-    {
-        "title": "Web Development Project",
-        "year": "2021",
-        "image": "images/web.png",
-        "description": "Built a full-stack web application using Node.js, Express, and MongoDB, featuring user authentication and real-time updates."
-    },
-    {
-        "title": "Statistical Analysis Tool",
-        "year": "2020",
-        "image": "images/stats.png",
-        "description": "Created a statistical analysis tool using R, implementing various statistical tests and visualization methods."
-    },
-    {
-        "title": "Game Development Project",
-        "year": "2020",
-        "image": "images/game.png",
-        "description": "Developed a 2D game using Unity and C#, featuring custom physics and AI behaviors."
+        "description": "Created a binary classification machine learning algorithm that identifies whether an image of a hand contains Eczema or not. The project included most of the data science pipeline, from scraping data online, data cleaning, and augmentation to model building and cross-validation. Through this project, our team (Pedro, Raul, and I) introduced ourselves to Machine Learning and taught ourselves the data science model building pipeline and models like Resnet, Inception network and an idea about the math behind the models.",
+        "link" : "https://github.com/eczemadetector/ImageClassifier"
     }
 ]
